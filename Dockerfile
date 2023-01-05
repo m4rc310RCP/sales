@@ -26,7 +26,7 @@ RUN mvn -Dmaven.repo.local=~/.m2/repository clean install
 
 FROM openjdk:8-alpine
 COPY --from=build /app/cmo/target/*-exec.jar /app/cmo/app.jar
-EXPOSE 8081
+EXPOSE 8080
 
 
 
