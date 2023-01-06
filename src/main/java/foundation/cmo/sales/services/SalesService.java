@@ -9,11 +9,9 @@ import io.leangen.graphql.spqr.spring.annotations.GraphQLApi;
 @GraphQLApi
 public class SalesService {
 	
-	public final String INFO = "Teste de anotations";
+	private final String DES_QUERY_TEST = "Query para testar se o serviço está disponível.";
 	
-	
-
-	@GraphQLQuery(name = "test", description = INFO)
+	@GraphQLQuery(name = "test", description = DES_QUERY_TEST)
 	public String testService() {
 		return "OK";
 	}
