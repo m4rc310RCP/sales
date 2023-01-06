@@ -10,16 +10,12 @@ import io.leangen.graphql.spqr.spring.annotations.GraphQLApi;
 public class SalesService {
 
 	private final String DES_QUERY_TEST = "Query para testar se o serviço está disponível.";
-
-	/**
-	 * The {@code String} class represents character strings. All string literals in
-	 * Java programs, such as {@code "abc"}, are implemented as instances of this
-	 * class.
-	 * 
-	 * @return
-	 */
+	
 	@Deprecated
-	@GraphQLQuery(name = "test", deprecationReason = "teste", description = DES_QUERY_TEST) 
+	@GraphQLQuery(
+			name = "test", 
+			deprecationReason = "Apenas para testes. Não use em produção.", 
+			description = DES_QUERY_TEST) 
 	public String testService() {
 		return "OK";
 	}
