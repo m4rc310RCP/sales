@@ -18,7 +18,7 @@ public class SalesService {
 	 * 
 	 * @return
 	 */
-	@GraphQLQuery(name = "test", description = DES_QUERY_TEST)
+	@GraphQLQuery(name = "test")
 	public String testService() {
 		return "OK";
 	}
