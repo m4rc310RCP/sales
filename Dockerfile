@@ -12,6 +12,8 @@ FROM maven:3.8-jdk-8 AS build
 
 
 
+
+
 #COPY .mvn/ .mvn
 #RUN ./mvnw dependency:resolve
 WORKDIR /app/cmo
