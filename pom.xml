@@ -61,11 +61,7 @@
 			<artifactId>fastjson</artifactId>
 			<version>${fastjson.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>com.m4rc310</groupId>
-			<artifactId>cmo-panel-spring</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+
 	</dependencies>
 	<build>
 		<resources>
