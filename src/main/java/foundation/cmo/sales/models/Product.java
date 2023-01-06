@@ -11,6 +11,7 @@ import lombok.Data;
 @Data
 @JsonInclude(Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
+
 public class Product {
 	@GraphQLQuery(name = "cd_ncm")
 	@JsonProperty(value = "Ncm")
