@@ -17,7 +17,11 @@ FROM maven:3.8-jdk-8 AS build
 WORKDIR /app/cmo
 COPY pom.xml ./
 COPY src ./src
-RUN mvn -Dmaven.repo.local=~/.m2/repository clean install
+
+# build the app and download dependencies only when these are new (thanks to the cache)
+RUN --mount=type=cache,target=/root/.m2  mvn clean package -Dmaven.test.skip
+
+#RUN mvn -Dmaven.repo.local=~/.m2/repository clean install
 
 #RUN mvn install -nsu
 #RUN mvn install --settings /home/dokku/.m2/settings.xml
