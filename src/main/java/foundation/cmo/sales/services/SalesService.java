@@ -18,7 +18,8 @@ public class SalesService {
 	 * 
 	 * @return
 	 */
-	@GraphQLQuery(name = "test")
+	@Deprecated
+	@GraphQLQuery(name = "test", deprecationReason = "teste", description = DES_QUERY_TEST) 
 	public String testService() {
 		return "OK";
 	}
