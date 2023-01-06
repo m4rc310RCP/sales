@@ -62,9 +62,9 @@
 			<version>${fastjson.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>com.xkcoding.http</groupId>
-			<artifactId>simple-http</artifactId>
-			<version>1.0.1</version>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.3.1</version>
 		</dependency>
 	</dependencies>
 	<build>
