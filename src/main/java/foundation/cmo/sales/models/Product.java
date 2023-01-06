@@ -17,6 +17,9 @@ public class Product {
 	@JsonProperty(value = "Ncm")
 	private String ncm;
 	
+	@GraphQLQuery(name = "cd_ean")
+	private String ean;
+	
 	@GraphQLQuery(name = "cd_cest")
 	@JsonProperty(value = "Cest_Codigo")
 	private String cest;
