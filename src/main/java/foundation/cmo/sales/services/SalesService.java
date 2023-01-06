@@ -1,9 +1,10 @@
 package foundation.cmo.sales.services;
 
 import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
+import org.apache.hc.client5.http.classic.methods.HttpGet;
+import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
+import org.apache.hc.client5.http.impl.classic.HttpClients;
+
 
 import org.springframework.stereotype.Service;
 
@@ -36,15 +37,15 @@ public class SalesService {
 			@GraphQLArgument(name = "cd_ean", description = "Código EAN") String ean) throws Exception {
 		String uri = String.format(URL_EANPIC, ean.trim());
 		
-		HttpClient client = HttpClient.newHttpClient();
-		HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(uri))
-                .build();
+		 try (CloseableHttpClient client = HttpClients.createDefault()) {
+			 HttpGet request = new HttpGet(uri);
+			 
+			 Product response = client.execute(request, httpResponse ->
+             mapper.readValue(httpResponse.getEntity().getContent(), Product.class));
+			 
+			 return response;
+		 }
 		
-		HttpResponse<String> response = client.send(request,
-                HttpResponse.BodyHandlers.ofString());
-		
-		return mapper.readValue(response.body(), Product.class);
 	}
 	
 }
