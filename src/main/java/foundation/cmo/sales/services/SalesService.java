@@ -9,7 +9,7 @@ import io.leangen.graphql.spqr.spring.annotations.GraphQLApi;
 @GraphQLApi
 public class SalesService {
 
-	@GraphQLQuery(name = "test", description = "Grapho tem o objetivo de testar se o servidor está apto para execução.")
+	@GraphQLQuery(name = "test", description = "${info.4.test}")
 	public String testService() {
 		return "OK";
 	}
