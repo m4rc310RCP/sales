@@ -20,7 +20,7 @@ import io.leangen.graphql.spqr.spring.annotations.GraphQLApi;
 public class SalesService {
 
 	private final String DES_QUERY_TEST = "Query para testar se o serviço está disponível.";
-	private final String URL_EANPIC = "http://www.eanpictures.com.br:9000/api/desc/{0}";
+	private final String URL_EANPIC = "http://www.eanpictures.com.br:9000/api/desc/%s";
 	private final ObjectMapper mapper = new ObjectMapper();
 	
 	@Deprecated
