@@ -37,4 +37,5 @@ public class App extends SpringBootServletInitializer{
 	    TimeZone.setDefault(TimeZone.getTimeZone("GMT-3"));
 	    logger.info(MessageFormat.format("Set TimeZone: {0}", new Date()));
 	}
+	
 }
