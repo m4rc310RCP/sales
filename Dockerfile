@@ -10,7 +10,7 @@ FROM maven:3.8-jdk-8 AS build
 #RUN addgroup -S spring && adduser -S spring -G spring
 #USER spring:spring
 
-
+FROM redis:7.0.5
 
 
 
