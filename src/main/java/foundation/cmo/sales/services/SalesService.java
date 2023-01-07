@@ -6,10 +6,12 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.hc.client5.http.classic.methods.HttpGet;
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
 import org.apache.hc.client5.http.impl.classic.HttpClients;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import foundation.cmo.sales.db.repositories.ProductRepository;
 import foundation.cmo.sales.models.Product;
 import io.leangen.graphql.annotations.GraphQLArgument;
 import io.leangen.graphql.annotations.GraphQLContext;
@@ -26,10 +28,18 @@ public class SalesService {
 	private final String URL_EANPIC = "desc";
 	private final String URL_IMGPIC = "gtin";
 	private final ObjectMapper mapper = new ObjectMapper();
+	
+	@Autowired
+	private ProductRepository productRepository;
 
 	@Deprecated
 	@GraphQLQuery(name = "test", deprecationReason = "Apenas para testes. Não use em produção.", description = DES_QUERY_TEST)
 	public String testService() {
+		
+		Iterable<Product> products = productRepository.findAll();
+		System.out.println(products);
+		
+		
 		return "OK";
 	}
 
