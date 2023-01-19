@@ -1,5 +1,2 @@
 
-
-
-
 sudo port load redis
